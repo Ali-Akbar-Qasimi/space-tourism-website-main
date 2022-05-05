@@ -1,0 +1,103 @@
+section{
+    height: 100%;
+    min-height: 100vh;
+    width: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background: url('./images/background-home-mobile.jpg') no-repeat;
+    background-size: 100% 100%;
+    background-position: cover;
+    overflow-x: hidden;
+    gap: 30px;
+    padding-top: 20%;
+}
+section .home-content{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 350px;
+}
+section .home-content .content-title{
+    font-size: 1rem;
+    font-weight: 200;
+    letter-spacing: 3px;
+}
+section .home-content .content-subtitle{
+    font-size: 5rem;
+    padding-bottom: 20px;
+    font-weight: thin;
+    letter-spacing: 5px;
+}
+section .home-content .content-paragraph{
+    font-size: 1rem;
+    font-weight: 200;
+    letter-spacing: 1px;
+    line-height: 22px;
+    color: #D0D6F9;
+}
+.explore{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: white;
+    color: black;
+    display: grid;
+    place-items: center;
+    font-size: 1.3rem;
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+    margin-bottom: 30px;
+}
+.explore::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #97979720;
+    border-radius: 50%;
+    transition: transform 500ms ease-in-out;
+    transform: scale(0);
+    z-index: -1;
+}
+.explore:hover::before{
+    transform: scale(1.7);
+}
+@media screen and (min-width:768px){
+    section{
+        background: url('./images/background-home-tablet.jpg');
+        background-size: 100% 100%;
+        background-position: cover;
+    }
+}
+@media screen and (min-width:1000px){
+    section{
+        background: url('./images/background-home-desktop.jpg');
+        background-size: 100% 100%;
+        display: flex;
+        flex-direction: row;
+        padding-top: 50px;
+    }
+    .home-content{
+        padding-top: 0%;
+    }
+    .home-content .content-paragraph{
+        text-align: left;
+    }
+    .home-content .content-title{
+        text-align: left;
+    }
+    .home-content .content-subtitle{
+        text-align: left;
+    }
+    .explore{
+        width: 274px;
+        height: 274px;
+    }
+}

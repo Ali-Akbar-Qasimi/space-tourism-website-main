@@ -1,0 +1,116 @@
+.technology{
+    height: 100vh;
+    min-height: 100%;
+    width: 100%;
+    background: url('./background-technology-mobile.jpg');
+    color: white;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.technology-image{
+    width: 100%;
+    height: 300px;
+    object-fit: cover/center;
+
+}
+.technology-navigation{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.technology-navigators{
+    width: 40px;
+    margin-top: 30px;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 50px;
+    color: white;
+    display: grid;
+    place-items: center;
+    transition: border 200ms ease-in-out;
+}
+.technology-navigators:hover{
+    border-color: white;
+}
+.technology-navigators.active{
+    background-color: white;
+    color: #0B0D17;
+}
+.technology-content{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 20px;
+}
+.technology-content .title{
+    font-weight: 200;
+    color: #D0D6F9;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+.technology-content .subtitle{
+    font-weight: 400;
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+.technology-content .technology-paragraph{
+    color: #D0D6F9;
+    line-height: 25px;
+}
+
+@media screen and (min-width:786px){
+    .technology{
+        background-image: url('./background-technology-tablet.jpg');
+    }
+    .technology-image{
+        height: 400px;
+    }
+}
+
+@media  screen and (min-width:1000px) {
+    .technology{
+        background-image: url('./background-technology-desktop.jpg');
+        display: grid;
+        overflow: hidden;
+        padding-left: 10%;
+        height: 100vh;
+        grid-template-areas: 
+        'header header .'
+        'navigator content image'
+        'navigator content image'
+        'navigator content image'
+        ;
+        gap: 10px;
+    }
+    .technology-content{
+        grid-area: content;
+        width: 100%;
+        padding-inline: 50px;
+        text-align: start;
+        max-width: 500px;
+        height: 80%;
+    }
+    .technology-navigation{
+        grid-area: navigator;
+        display: flex;
+        flex-direction: column;
+        height: max-content;
+        align-items: center;
+    }
+    .technology-image{
+        grid-area: image;
+        width: 100%;
+        height: 80%;
+        max-width: 500px;
+    }
+    .header-text{
+        grid-area: header;
+        padding-left: 10%;
+        margin-bottom: 30px;
+        height: max-content;
+        padding-top: 150px;
+    }
+}

@@ -1,0 +1,120 @@
+.header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+}
+.navbar-hr{
+    display: none;
+}
+nav ul{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    height: max-content;
+    top: 0;
+    width: 100%;
+    background: rgba(68, 67, 67, 0.489);
+    backdrop-filter: blur(5px);
+    transform: translateY(-100%);
+    transition: 300ms transform linear;
+    padding-inline: 30px;
+    padding-top: 60px;
+    padding-bottom: 20px;
+    z-index: 5;
+    gap: 5px;
+    overflow: hidden;
+}
+nav ul a{
+    cursor: pointer;
+    text-decoration: none;
+}
+
+nav ul a li{
+    color: rgb(182, 181, 181);
+    font-size: 16px;
+    font-weight: 200;
+    list-style: none;
+    padding-block: 20px;
+}
+nav ul a li span{
+    font-weight: bold;
+}
+.menu{
+    position: relative;
+}
+.menu .hamburger{
+    visibility: visible;
+    opacity: 1;
+    transition: all ease-in-out 300ms;
+}
+.menu .close{
+    position: absolute;
+    z-index: 10;
+    right: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: all ease-in-out 300ms;
+}
+
+nav.show ul{
+    transform: translateX(0);
+}
+nav.show .menu .hamburger{
+    visibility: hidden;
+    opacity: 0
+}
+nav.show .menu .close{
+    visibility: visible;
+    opacity: 1;
+}
+
+@media screen and (min-width:768px) {
+    nav ul{
+        position: unset;
+        transform: translateY(0);
+        width: 60%;
+        height: max-content;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        overflow: visible;
+        background-color: rgba(255, 255, 255, 4%);
+        gap: 30px;
+        padding-inline: 30px;
+        backdrop-filter: blur(5px);
+        padding-right: 50px;
+    }
+    nav ul li:hover{
+        color: white;
+    }
+    nav ul li span{
+        display: none;
+    }
+    .menu{
+        display: none;
+    }
+}
+@media screen and (min-width:1000px){
+    .navbar-hr{
+        width: 50%;
+        margin-left: 50px;
+        display: block;
+        background-color: rgba(255, 255, 255, 25%);
+    }
+    .links{
+        display: flex;
+        gap: 5px;
+    }
+    .links span{
+        display: block;
+    }
+}

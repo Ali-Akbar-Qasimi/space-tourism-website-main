@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  font-family: sans-serif;
+}
+
+.App {
+  overflow-x: hidden;
+}
+
+.header-text {
+  padding-top: 100px;
+  padding-bottom: 50px;
+  text-align: center;
+  font-weight: 200;
+  font-size: 20px;
+  letter-spacing: 5px;
+  color: white;
+  width: 100%;
+}
+
+.header-text span {
+  color: rgba(255, 255, 255, 0.258);
+}
+
+@media screen and (min-width: 786px) {
+  .header-text {
+    text-align: start;
+    padding-left: 80px;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .header-text {
+    padding-bottom: 0;
+  }
+}
+/*# sourceMappingURL=style.css.map */

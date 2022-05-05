@@ -1,0 +1,188 @@
+.destination{
+    overflow-x: hidden;
+    background-image: url('./background-destination-mobile.jpg');
+    background-position: center;
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    height: max-content;
+}
+.image{
+    width: 60%;
+}
+
+.navigation{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.navigation button{
+    list-style: none;
+    color: #D0D6F9;
+    cursor: pointer;
+    padding: 10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+.navigators.active{
+    color: white;
+    border-bottom: 3px solid #D0D6F9;
+}
+.navigators.active:hover::before{
+    width: 0;
+}
+
+.navigation button::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 3px;
+    width: 0;
+    background-color: white;
+    transition: width 300ms ease-in-out;
+}
+.navigation button:hover{
+    color: #F9F9F9;
+    
+}
+.navigation button:hover::before{
+    width: 80%;
+}
+.header-text{
+    padding-top: 50px;
+}
+
+
+.destination-content{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 0;
+    max-width: 80%;
+}
+.destination-content .content-header{
+    font-size: 4rem;
+    font-weight: 400;
+    letter-spacing: 3px;
+}
+.destination-content .content-body{
+    font-size: 1rem;
+    font-weight: 200;
+    letter-spacing: 1px;
+    line-height: 22px;
+    color: #D0D6F9;
+}
+
+hr{
+    width: 80%;
+    border: 0;
+    height: 1px;
+    background-color: #383B4B;
+    margin: 20px 0;
+}
+
+.travel{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 80px;
+}
+.travel p{
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 3px;
+    color: #D0D6F9;
+    padding-bottom: 5px;
+}
+
+.travel h1{
+    font-size: 2.5rem;
+    font-weight: 400;
+    letter-spacing: 3px;
+}
+
+@media screen and (min-width:786px){
+    .destination{
+        background-image: url('./background-destination-tablet.jpg');
+    }
+    .image{
+        width: 40%;
+    }
+    .travel{
+        display: flex;
+        flex-direction: row;
+    }
+    .content{
+        max-width: 60%;
+    }
+    .header-text{
+        padding-top: 0;
+    }
+}
+
+@media screen and (min-width:1000px){
+    .destination{
+        background-image: url('./background-destination-desktop.jpg');
+        display: grid;
+        height: 100vh;
+        padding-inline: 10%;
+        overflow: hidden;
+        grid-template-areas: 
+        'header .'
+        'image navigator'
+        'image content'
+        'image hr'
+        'image travel'
+        ;
+        gap: 30px;
+    }
+    .destination-content{
+        grid-area: content;
+        width: 100%;
+        padding-inline: 50px;
+        text-align: start;
+    }
+    .navigation{
+        grid-area: navigator;
+        padding-left: 40px;
+        display: flex;
+        justify-content: flex-start;
+    }
+    .travel{
+        grid-area: travel;
+        margin-inline: auto;
+        text-align: start;
+        display: flex;
+        width: 100%;
+        padding-left: 50px;
+    }
+    .travel h1{
+        font-size: 2rem;
+    }
+    .image{
+        grid-area: image;
+        width: 80%;
+        margin-left: 50px;
+    }
+    hr{
+        grid-area: hr;
+        margin-left: 50px;
+        margin-block: auto;
+        width: 80%;
+    }
+    .header-text{
+        grid-area: header;
+        padding-top: 0;
+        margin-top: -50px;
+    }
+}

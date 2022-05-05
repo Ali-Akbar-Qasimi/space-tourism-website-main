@@ -1,0 +1,128 @@
+.crew{
+    background-image: url('./background-crew-mobile.jpg');
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    min-height: 100vh;
+}
+.hr{
+    margin: 0;
+    background-color: #d0d6f56d;
+    margin-top: -40px;
+}
+.crew-header{
+    padding-top: 100px;
+}
+.crew-image{
+    width: 50%;
+}
+.crew-navigation{
+    display: flex;
+    gap: 15px;
+}
+
+.crew-navigators{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.167);
+    cursor: pointer;
+}
+.crew-navigators.active{
+    background-color: rgba(255, 255, 255);
+}
+
+.crew-content{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.crew-content .role{
+    font-weight: 200;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.493);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+.crew-content .name{
+    font-weight: 400;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.crew-content .paragraph{
+    color: #D0D6F5;
+    line-height: 25px;
+    max-width: 400px;
+    padding-bottom: 30px;
+}
+
+@media screen and (min-width:786px){
+    .crew{
+        background-image: url('./background-crew-tablet.jpg');
+    }
+    .hr{
+        display: none;
+    }
+    .crew-header{
+        order: 0;
+    }
+    .crew-content{
+        order: 1;
+    }
+    .crew-navigation{
+        order: 2;
+    }
+    .crew-image{
+
+        order: 3;
+    }
+}
+
+@media screen and (min-width:1000px){
+    .crew{
+        background-image: url('./background-crew-desktop.jpg');
+        display: grid;
+        overflow: hidden;
+        height: 100%;
+        padding-inline: 10%;
+        grid-template-areas: 
+        'header .'
+        'content image'
+        'content image'
+        'content image'
+        'navigator image'
+        ;
+        gap: 0;
+    }
+        .crew-content{
+            grid-area: content;
+            width: 100%;
+            padding-inline: 50px;
+            text-align: start;
+        }
+        .crew-navigation{
+            grid-area: navigator;
+            padding-left: 60px;
+            margin-bottom: 100px;
+            display: flex;
+            justify-content: flex-start;
+        }
+        .crew-image{
+            grid-area: image;
+            width: 100%;
+            margin-left: 50px;
+            height: 100%;
+            max-width: 400px;
+        }
+        .header-text{
+            grid-area: header;
+            padding-left: 50px;
+            padding-top: 0;
+        }
+    }
